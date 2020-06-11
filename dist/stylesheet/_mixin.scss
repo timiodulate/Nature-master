@@ -1,0 +1,89 @@
+@import './variables';
+
+@mixin flexSpace {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flexCenter($dir) {
+   display: flex;
+   flex-direction: $dir;
+   align-items: center;
+   justify-content: center;
+}
+
+@function back($name) {
+  @return map-get($img, $name);
+}
+
+@mixin gradient($pin) {
+  background-image: linear-gradient(135deg, rgba(49, 24, 131, 0.9) 0%, rgba(72, 56, 149, 0.8) 100%), back($pin) center no-repeat;
+}
+
+@mixin grad {
+  background-image: linear-gradient(135deg, rgba(49, 24, 131, 0.9) 0%, rgba(72, 56, 149, 0.8) 100%);
+}
+
+@mixin background($slop) {
+  background: linear-gradient(135deg, rgba(49, 24, 131, 0.9) 0%, rgba(72, 56, 149, 0.8) 100%), back($slop) center no-repeat;;
+  background-size: cover;
+  position: relative;
+}
+@mixin itemCard($slop) {
+  background: linear-gradient(135deg, rgba(49, 24, 131, 0.8) 0%, rgba(72, 56, 149, 0.7) 100%), back($slop) center no-repeat;;
+  background-size: cover;
+  position: relative;
+}
+
+@mixin ground($pot) {
+  background: back($pot) center no-repeat;
+}
+
+@mixin absolute($top, $left) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+
+@mixin titleH{
+  
+  .title-heading {
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 7rem;
+    color: rgba(0, 0, 0, .7);
+
+    h2 {
+      font-family: 'Aldrich', sans-serif;
+      margin: .1rem 0 .5rem;
+    }
+
+    p {
+      text-transform: lowercase;
+    }
+  }
+}
+
+@mixin gridd{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+}
+
+@mixin btn {
+  background-color: #eb648c;
+  border-radius: 2rem;
+  color: $white;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  transition: background-color 650ms;
+  font-size: .8rem;
+
+  &:hover {
+    background-color: $pink;
+  }
+}

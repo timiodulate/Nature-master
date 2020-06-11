@@ -1,0 +1,518 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-family: 'Numito', sans-serif;
+  font-size: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  margin: 4rem auto;
+}
+
+.btn {
+  background-color: #eb648c;
+  border-radius: 2rem;
+  color: #fafafa;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  -webkit-transition: background-color 650ms;
+  transition: background-color 650ms;
+  font-size: .8rem;
+}
+
+.btn:hover {
+  background-color: #eb648c;
+}
+
+header {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: linear-gradient(135deg, rgba(49, 24, 131, 0.9) 0%, rgba(72, 56, 149, 0.8) 100%), url("../images/header-bg.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+header nav .nav-brand {
+  width: 2rem;
+}
+
+header nav i {
+  font-size: 3.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+header nav .close i {
+  color: #eb648c;
+}
+
+header nav .menu-icons {
+  display: none;
+}
+
+header nav .nav-list {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav .nav-list .close {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+
+header nav .nav-list .nav-item {
+  margin: 0 1.5rem;
+}
+
+header nav .nav-list .nav-item:last-child {
+  margin: 0;
+}
+
+header nav .nav-list .nav-item .navlink {
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+
+header nav .nav-list .nav-item .navlink,
+header nav .nav-list .nav-item .current {
+  position: relative;
+}
+
+header nav .nav-list .nav-item .navlink::before,
+header nav .nav-list .nav-item .current::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -.5rem;
+  background-color: #eb648c;
+  width: 100%;
+  height: 2px;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 650ms;
+  transition: -webkit-transform 650ms;
+  transition: transform 650ms;
+  transition: transform 650ms, -webkit-transform 650ms;
+}
+
+header nav .nav-list .nav-item .current::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+header nav .nav-list .nav-item .navlink:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+header .hero {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 6rem 0 16rem;
+}
+
+header .hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 12rem;
+  background: url("../images/wave-large.png") center no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+header .hero .main-message {
+  color: #fafafa;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+header .hero .main-message h3 {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+header .hero .main-message h1 {
+  font-family: 'Aldrich', sans-serif;
+  margin: .2rem 0 .5rem;
+}
+
+header .hero .main-message p {
+  text-transform: lowercase;
+  width: 50%;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+main {
+  position: relative;
+}
+
+main .experience-outdoors {
+  background-color: white;
+  width: 100%;
+  max-width: 70rem;
+}
+
+main .experience-outdoors .title-heading {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 7rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+main .experience-outdoors .title-heading h2 {
+  font-family: 'Aldrich', sans-serif;
+  margin: .1rem 0 .5rem;
+}
+
+main .experience-outdoors .title-heading p {
+  text-transform: lowercase;
+}
+
+main .experience-outdoors .activities-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+}
+
+main .experience-outdoors .activities-grid-item {
+  height: 28rem;
+  padding: 3rem;
+  color: #fafafa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: initial;
+      -ms-flex-align: initial;
+          align-items: initial;
+  cursor: pointer;
+}
+
+main .experience-outdoors .activities-grid-item i {
+  font-size: 3rem;
+  color: #eb648c;
+}
+
+main .experience-outdoors .activities-grid-item h3 {
+  font-family: 'Aldrich', sans-serif;
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+
+main .experience-outdoors .activities-grid-item p {
+  line-height: 18px;
+}
+
+main .experience-outdoors .activities-grid .star-gazing {
+  background: linear-gradient(135deg, rgba(49, 24, 131, 0.8) 0%, rgba(72, 56, 149, 0.7) 100%), url("../images/stars.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+main .experience-outdoors .activities-grid .hiking {
+  background: linear-gradient(135deg, rgba(49, 24, 131, 0.8) 0%, rgba(72, 56, 149, 0.7) 100%), url("../images/hiking.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+main .experience-outdoors .activities-grid .camping {
+  background: linear-gradient(135deg, rgba(49, 24, 131, 0.8) 0%, rgba(72, 56, 149, 0.7) 100%), url("../images/camping.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+main .testimonials {
+  background: linear-gradient(135deg, rgba(49, 24, 131, 0.9) 0%, rgba(72, 56, 149, 0.8) 100%), url("../images/testimonials-bg.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 15rem 0 5rem;
+}
+
+main .testimonials::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 12rem;
+  background: url("../images/wave-large-reversed.png") center no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+main .testimonials .testimonial {
+  color: #fafafa;
+  text-align: center;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+main .testimonials .testimonial-text-box {
+  padding: 0 1.5rem;
+  margin-bottom: .8rem;
+}
+
+main .testimonials .testimonial-text-box i {
+  opacity: .5;
+  margin-bottom: .5rem;
+  font-size: 3rem;
+  color: #eb648c;
+}
+
+main .testimonials .testimonial-text-box p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+main .testimonials .testimonial-customer img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 100%;
+  border: 3px solid #eb648c;
+  margin-bottom: .8rem;
+}
+
+main .testimonials .testimonial-customer h3 {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+main .begin-adventure {
+  max-width: 70rem;
+}
+
+main .begin-adventure .title-heading {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 7rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+main .begin-adventure .title-heading h2 {
+  font-family: 'Aldrich', sans-serif;
+  margin: .1rem 0 .5rem;
+}
+
+main .begin-adventure .title-heading p {
+  text-transform: lowercase;
+}
+
+main .begin-adventure .adventure-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+main .begin-adventure .adventure-grid-item p {
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 18px;
+}
+
+footer {
+  padding: 2rem 0;
+  background-color: #d7d4ed;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 700px) {
+  header nav {
+    max-width: 90%;
+    padding: 1rem 0;
+  }
+  header nav .nav-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 25rem;
+    height: 100vh;
+    background-color: #d7d4ed;
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    z-index: 1500;
+    -webkit-transition: all 650ms ease-in-out;
+    transition: all 650ms ease-in-out;
+  }
+  header nav .nav-list .nav-item {
+    margin: 1.5rem 0;
+  }
+  header nav .nav-list .nav-item .navlink,
+  header nav .nav-list .nav-item .current {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.6rem;
+  }
+  header nav .menu-icons {
+    display: initial;
+  }
+  header .hero {
+    padding-bottom: 20rem;
+  }
+  header .hero::after {
+    background: url("../images/wave-medium.png");
+    height: 8rem;
+  }
+  header .hero .main-message {
+    max-width: 90%;
+    padding: 0;
+  }
+  header .hero .main-message p {
+    width: 100%;
+  }
+  main .experience-outdoors {
+    width: 90%;
+    margin: 1rem auto;
+  }
+  main .experience-outdoors .activities-grid-item {
+    height: 35rem;
+    padding: 5rem;
+  }
+  main .testimonials {
+    padding-top: 10rem;
+  }
+  main .testimonials::before {
+    background: url("../images/wave-medium-reversed.png");
+    height: 8.5rem;
+  }
+  main .testimonials .testimonial {
+    max-width: 90%;
+  }
+  main .title-heading h2 {
+    font-size: 2.5rem;
+  }
+  main .begin-adventure {
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  header .hero::after {
+    background: url("../images/wave-small.png");
+    height: 4.6rem;
+  }
+  main .testimonials::before {
+    background: url("../images/wave-small-reversed.png");
+    height: 4.6rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

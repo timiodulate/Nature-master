@@ -1,0 +1,377 @@
+@import './variables';
+@import './mixin';
+@import './resets';
+
+
+// Header 
+header {
+  width: $entire-width;
+  height: fit-content;
+  @include background(header);
+  
+  // Nav 
+  nav {
+    @include flexSpace;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    background: transparent;
+    width: $entire-width;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    
+    .nav-brand {
+      width: 2rem;
+    }
+    
+    i {
+      font-size: 3.5rem;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .close i {
+      color: $pink;
+    }
+    
+    .menu-icons {
+      display: none;
+    }
+
+    .nav-list {
+      background-color: transparent;
+      @include flexCenter(row);
+      
+      .close {
+        @include absolute(1rem, 1.5rem)
+      }
+      
+      .nav-item {
+        margin: 0 1.5rem;
+
+        &:last-child {
+          margin: 0;
+        }
+        
+        .navlink {
+          font-size: 1rem;
+          text-transform: uppercase;
+          color: $white;
+        }
+        
+        .navlink,
+        .current {
+          position: relative;
+                
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -.5rem;
+            background-color: $pink;
+            width: $entire-width;
+            height: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 650ms;
+          }
+        }
+
+        .current::before {
+          transform: scaleX(1);
+        }
+
+        .navlink:hover::before{
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+  
+  .hero {
+    width: $entire-width;
+    height: fit-content;
+    padding: 6rem 0 16rem;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: $entire-width;
+      height: 12rem;
+      @include ground(wl);
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+    }
+    
+    .main-message {
+      color: $white;
+      text-transform: uppercase;
+      width: $entire-width;
+      max-width: 70rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+
+      h3 {
+        color:rgba(255, 255, 255, .76);
+      }
+      
+      h1 {
+        font-family: 'Aldrich', sans-serif;
+        margin: .2rem 0 .5rem;
+      }
+      
+      p {
+        text-transform: lowercase;
+        width: 50%;
+        line-height: 18px;
+        color:rgba(255, 255, 255, .76);
+      }
+    }
+  }
+}
+
+
+main {
+  position: relative;
+  
+  .experience-outdoors {
+    background-color: white;
+    width: $entire-width;
+    max-width: 70rem;
+    @include titleH;
+    
+    .activities-grid {
+      @include gridd;
+      
+      &-item {
+        height: 28rem;
+        padding: 3rem;
+        color: $white;
+        @include flexCenter(column);
+        align-items: initial;
+        cursor: pointer;
+
+        i {
+          font-size: 3rem;
+          color: $pink;
+        }
+
+        h3 {
+          font-family: 'Aldrich', sans-serif;
+          text-transform: uppercase;
+          margin: 2rem 0;
+        }
+
+        p {
+          line-height: 18px;
+        }
+      }
+
+      .star-gazing {
+        @include itemCard(stars);
+      }
+      
+      .hiking {
+        @include itemCard(hiking);
+      }
+      
+      .camping {
+        @include itemCard(camping);
+      }
+    }
+  }
+
+
+  .testimonials {
+    @include background(testi);
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 15rem 0 5rem;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: $entire-width;
+      height: 12rem;
+      @include ground(wlr);
+      background-size: cover;
+      background-position: bottom;
+      background-repeat: no-repeat;
+    }
+    
+    .testimonial {
+      color: $white;
+      text-align: center;
+      width: $entire-width;
+      max-width: 70rem;
+      margin: 0 auto;
+      
+      &-text-box {
+        padding: 0 1.5rem;
+        margin-bottom: .8rem;
+        
+        i {
+          opacity: .5;
+          margin-bottom: .5rem;
+          font-size: 3rem;
+          color: $pink;
+        }
+        
+        p {
+          color:rgba(255, 255, 255, .76);
+        }
+      }
+
+      &-customer {
+        
+        img {
+          width: 6rem;
+          height: 6rem;
+          border-radius: 100%;
+          border: 3px solid $pink;
+          margin-bottom: .8rem;
+        }
+
+        h3 {
+          color:rgba(255, 255, 255, .76);
+        }
+      }
+        
+    }
+  }
+
+  .begin-adventure {
+    @include titleH;
+    max-width: 70rem;
+
+    .adventure-grid {
+      @include gridd;
+      margin-bottom: 2rem;
+
+      &-item p {
+        color: rgba(0, 0, 0, .7);
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+
+footer {
+  padding: 2rem 0;
+  background-color: $pale;
+  text-align: center;
+  color: rgba(0, 0, 0, .7);
+}
+
+
+
+@media screen and (max-width: 700px) {
+  header {
+    
+    nav {
+      max-width: 90%;
+      padding: 1rem 0;
+      
+      .nav-list {
+        @include flexCenter(column);
+        
+        width: 25rem;
+        height: 100vh;
+        background-color: $pale;
+        position: fixed;
+        top: 0;
+        right: -26rem;
+        z-index: 1500;
+        transition: all 650ms ease-in-out;
+        
+        .nav-item {
+          margin: 1.5rem 0;
+          
+          .navlink,
+          .current {
+            color: rgba(0, 0, 0, .7);
+            font-size: 1.6rem;
+          }
+        }
+      }
+      
+      .menu-icons {
+        display: initial;
+      }
+    }
+    
+    .hero {
+      padding-bottom: 20rem;
+
+      &::after {
+        background: back(wm);
+        height: 8rem;
+      }
+      
+      .main-message {
+        max-width: 90%;
+        padding: 0;
+
+        p {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  main {
+    
+    .experience-outdoors {
+      width: 90%;
+      margin: 1rem auto;
+
+      .activities-grid {
+
+        &-item {
+          height: 35rem;
+          padding: 5rem;
+        }
+      }
+    }
+
+    .testimonials {
+      padding-top: 10rem;
+      
+      &::before {
+        background: back(wmr);
+        height: 8.5rem;
+      }
+
+      .testimonial {
+        max-width: 90%;
+      }
+    }
+    
+    .title-heading h2 {
+      font-size: 2.5rem;
+    }
+
+    .begin-adventure {
+      max-width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 385px) {
+  header .hero::after {
+    background: back(ws);
+    height: 4.6rem;
+  }
+  
+  main .testimonials::before {
+    background: back(wsr);
+    height: 4.6rem;
+  }
+}

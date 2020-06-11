@@ -1,0 +1,6 @@
+dist/style/_mixin.scss
+dist/style/_resets.scss
+dist/style/_variables.scss
+dist/style/main.scss
+dist/style/main.css.map
+node_modules
